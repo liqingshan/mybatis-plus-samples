@@ -2,6 +2,7 @@ package com.baomidou.mybatisplus.samples.deluxe.mapper;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.samples.deluxe.entity.User2;
 import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
@@ -26,5 +27,7 @@ public interface UserMapper extends MyBaseMapper<User> {
     List<User> findList(@Param("user") User user);
 
     List<User> customerSqlSegment(@Param("ew") Wrapper ew);
+
+    List<User2> customerSqlSegment2(@Param("ew") Wrapper ew);
 
 }

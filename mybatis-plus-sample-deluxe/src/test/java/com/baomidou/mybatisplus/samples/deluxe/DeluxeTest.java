@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.samples.deluxe.entity.User;
+import com.baomidou.mybatisplus.samples.deluxe.entity.User2;
 import com.baomidou.mybatisplus.samples.deluxe.mapper.UserMapper;
 import com.baomidou.mybatisplus.samples.deluxe.model.UserPage;
 import org.junit.Assert;
@@ -109,5 +110,15 @@ class DeluxeTest {
         ew.like("u.name", "Tom");
         List<User> list = mapper.customerSqlSegment(ew);
         Assert.assertEquals(1, list.size());
+    }
+
+    @Test
+    void testCustomSqlSegment2() {
+        QueryWrapper<User2> ew = new QueryWrapper<>();
+        ew.like("u.name", "Tom");
+        List<User2> list = mapper.customerSqlSegment2(ew);
+        Assert.assertEquals(1, list.size());
+
+        System.out.println(list);
     }
 }

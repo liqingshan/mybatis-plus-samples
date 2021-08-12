@@ -26,4 +26,10 @@
         ${ew.customSqlSegment}
     </select>
 
+    <select id="customerSqlSegment2" resultType="com.baomidou.mybatisplus.samples.deluxe.entity.User2">
+        select u.name
+        from USER u
+        ${ew.customSqlSegment}
+    </select>
+
 </mapper>
